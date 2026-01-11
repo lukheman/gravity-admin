@@ -4,7 +4,6 @@
     'userInitials' => null,
     'notificationCount' => 0,
     'searchPlaceholder' => 'Search anything...',
-    'logoutRoute' => null,
     'showLogout' => true,
     'showThemeToggle' => true
 ])
@@ -52,7 +51,7 @@
             <small class="user-role">{{ $userRole }}</small>
         </div>
         @if($showLogout)
-            <form method="POST" action="{{ $logoutRoute }}" class="d-inline">
+            <form method="POST" action="{{ route('logout') }}" class="d-inline">
                 @csrf
                 <button type="submit" class="btn btn-link" title="Logout" style="color: var(--text-secondary);">
                     <i class="fas fa-sign-out-alt" style="font-size: 1.25rem;"></i>
