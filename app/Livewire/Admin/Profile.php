@@ -4,20 +4,27 @@ namespace App\Livewire\Admin;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 #[Layout('components.admin.livewire-layout')]
 #[Title('Profile - AdminPro')]
 class Profile extends Component
 {
+    use WithFileUploads;
+
     public string $name = '';
     public string $email = '';
     public string $current_password = '';
     public string $password = '';
     public string $password_confirmation = '';
+
+    public $avatar;
+    public ?string $currentAvatar = null;
 
     public bool $showPasswordSection = false;
 
@@ -26,6 +33,7 @@ class Profile extends Component
         $user = Auth::user();
         $this->name = $user->name;
         $this->email = $user->email;
+        $this->currentAvatar = $user->avatar;
     }
 
     protected function rules(): array
@@ -45,6 +53,8 @@ class Profile extends Component
 
     protected $messages = [
         'current_password.current_password' => 'Password saat ini tidak sesuai.',
+        'avatar.image' => 'File harus berupa gambar.',
+        'avatar.max' => 'Ukuran gambar maksimal 2MB.',
     ];
 
     public function togglePasswordSection(): void
@@ -54,6 +64,54 @@ class Profile extends Component
         $this->password = '';
         $this->password_confirmation = '';
         $this->resetValidation(['current_password', 'password', 'password_confirmation']);
+    }
+
+    public function updatedAvatar(): void
+    {
+        $this->validate([
+            'avatar' => ['image', 'max:2048'], // 2MB max
+        ]);
+    }
+
+    public function uploadAvatar(): void
+    {
+        $this->validate([
+            'avatar' => ['required', 'image', 'max:2048'],
+        ]);
+
+        $user = Auth::user();
+
+        // Delete old avatar if exists
+        if ($user->avatar && Storage::exists($user->avatar)) {
+            Storage::delete($user->avatar);
+        }
+
+        // Store new avatar
+        $path = $this->avatar->store('avatars', 'public');
+
+        $user->avatar = $path;
+        $user->save();
+
+        $this->currentAvatar = $path;
+        $this->avatar = null;
+
+        session()->flash('success', 'Foto profil berhasil diperbarui.');
+    }
+
+    public function removeAvatar(): void
+    {
+        $user = Auth::user();
+
+        if ($user->avatar && Storage::exists($user->avatar)) {
+            Storage::delete($user->avatar);
+        }
+
+        $user->avatar = null;
+        $user->save();
+
+        $this->currentAvatar = null;
+
+        session()->flash('success', 'Foto profil berhasil dihapus.');
     }
 
     public function updateProfile(): void
