@@ -27,10 +27,10 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="input-group" style="max-width: 400px;">
-            <span class="input-group-text bg-white border-end-0">
-                <i class="fas fa-search text-muted"></i>
+            <span class="input-group-text" style="background: var(--input-bg); border-color: var(--border-color);">
+                <i class="fas fa-search" style="color: var(--text-muted);"></i>
             </span>
-            <input type="text" class="form-control border-start-0" placeholder="{{ $searchPlaceholder }}">
+            <input type="text" class="form-control" placeholder="{{ $searchPlaceholder }}" style="background: var(--input-bg); border-color: var(--border-color); color: var(--text-primary);">
         </div>
     </div>
     <div class="d-flex align-items-center gap-3">

@@ -363,6 +363,31 @@
             border-bottom-right-radius: 8px;
         }
 
+        /* Bootstrap Table Dark Mode Override */
+        .table {
+            --bs-table-bg: var(--bg-secondary);
+            --bs-table-color: var(--text-primary);
+            --bs-table-border-color: var(--border-color);
+            --bs-table-striped-bg: var(--bg-tertiary);
+            --bs-table-striped-color: var(--text-primary);
+            --bs-table-hover-bg: var(--hover-bg);
+            --bs-table-hover-color: var(--text-primary);
+        }
+
+        .table > :not(caption) > * > * {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border-bottom-color: var(--border-color);
+        }
+
+        .table-modern tbody tr {
+            background: var(--bg-secondary) !important;
+        }
+
+        .table-modern tbody tr:hover {
+            background: var(--hover-bg) !important;
+        }
+
         /* Theme Toggle Button */
         .theme-toggle {
             background: transparent;
@@ -472,6 +497,25 @@
 
         .form-control::placeholder {
             color: var(--text-muted);
+        }
+
+        /* Input Group Dark Mode */
+        .input-group-text {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .input-group .form-control {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .input-group .form-control:focus {
+            background: var(--input-bg);
+            border-color: var(--primary-color);
+            color: var(--text-primary);
         }
 
         .invalid-feedback {
