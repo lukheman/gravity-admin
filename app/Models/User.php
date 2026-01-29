@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -55,7 +57,26 @@ class User extends Authenticatable
         return Str::of($this->name)
             ->explode(' ')
             ->take(2)
-            ->map(fn ($word) => Str::substr($word, 0, 1))
+            ->map(fn($word) => Str::substr($word, 0, 1))
             ->implode('');
+    }
+
+    /**
+     * Get the user's avatar URL
+     */
+    public function avatarUrl(): ?string
+    {
+        if ($this->avatar) {
+            return Storage::url($this->avatar);
+        }
+        return null;
+    }
+
+    /**
+     * Check if user has an avatar
+     */
+    public function hasAvatar(): bool
+    {
+        return !empty($this->avatar);
     }
 }
