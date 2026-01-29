@@ -521,11 +521,12 @@
     <!-- Sidebar -->
     <x-admin.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
         <x-admin.sidebar-section title="Main">
-            <x-admin.sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home">Dashboard</x-admin.sidebar-link>
+            <x-admin.sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home" :active="request()->routeIs('dashboard')">Dashboard</x-admin.sidebar-link>
             <x-admin.sidebar-link href="{{ route('admin.users') }}" icon="fas fa-users" :active="request()->routeIs('admin.users')">Users</x-admin.sidebar-link>
         </x-admin.sidebar-section>
 
-        <x-admin.sidebar-section title="Settings">
+        <x-admin.sidebar-section title="Account">
+            <x-admin.sidebar-link href="{{ route('admin.profile') }}" icon="fas fa-user-circle" :active="request()->routeIs('admin.profile')">Profile</x-admin.sidebar-link>
             <x-admin.sidebar-link href="#settings" icon="fas fa-cog">Settings</x-admin.sidebar-link>
         </x-admin.sidebar-section>
     </x-admin.sidebar>
@@ -534,10 +535,10 @@
     <div class="main-content">
         <!-- Top Bar -->
         <x-admin.topbar
-            user-name="Admin User"
+            :user-name="Auth::user()?->name ?? 'Guest'"
             user-role="Administrator"
             :notification-count="0"
-            :show-logout="false"
+            :show-logout="true"
         />
 
         <!-- Content Area -->

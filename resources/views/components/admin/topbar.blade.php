@@ -45,11 +45,13 @@
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">{{ $notificationCount }}</span>
             @endif
         </button>
-        <div class="user-avatar">{{ $initials }}</div>
-        <div class="d-none d-md-block">
-            <div class="fw-semibold user-name">{{ $userName }}</div>
-            <small class="user-role">{{ $userRole }}</small>
-        </div>
+        <a href="{{ route('admin.profile') }}" class="d-flex align-items-center gap-2 text-decoration-none" title="Go to Profile">
+            <div class="user-avatar">{{ $initials }}</div>
+            <div class="d-none d-md-block">
+                <div class="fw-semibold user-name">{{ $userName }}</div>
+                <small class="user-role">{{ $userRole }}</small>
+            </div>
+        </a>
         @if($showLogout)
             <form method="POST" action="{{ route('logout') }}" class="d-inline">
                 @csrf
