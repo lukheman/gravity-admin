@@ -75,7 +75,7 @@
 
         <!-- Sign Up Link -->
         <div class="signup-link">
-            Don't have an account? <a href="#">Create Account</a>
+            Don't have an account? <a href="{{ route('register') }}">Create Account</a>
         </div>
     </div>
 </div>
