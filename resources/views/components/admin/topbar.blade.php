@@ -46,7 +46,11 @@
             @endif
         </button>
         <a href="{{ route('admin.profile') }}" class="d-flex align-items-center gap-2 text-decoration-none" title="Go to Profile">
-            <div class="user-avatar">{{ $initials }}</div>
+            @if(Auth::user()?->hasAvatar())
+                <img src="{{ Auth::user()->avatarUrl() }}" alt="Avatar" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+            @else
+                <div class="user-avatar">{{ $initials }}</div>
+            @endif
             <div class="d-none d-md-block">
                 <div class="fw-semibold user-name">{{ $userName }}</div>
                 <small class="user-role">{{ $userRole }}</small>
