@@ -7,7 +7,11 @@ use App\Livewire\Admin\Profile;
 use App\Livewire\Admin\ComponentDocs;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\Guest\LandingPage;
 use App\Http\Controllers\Admin\LogoutController;
+
+// Guest Routes
+Route::get('/', LandingPage::class)->name('home');
 
 // Auth Routes
 Route::get('/login', Login::class)->name('login');
