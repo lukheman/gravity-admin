@@ -11,7 +11,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
-#[Layout('layouts.auth')]
+#[Layout('layouts.guest')]
 #[Title('Register - AdminPro')]
 class Register extends Component
 {
@@ -59,6 +59,7 @@ class Register extends Component
 
     public function render()
     {
-        return view('livewire.auth.register');
+        return view('livewire.auth.register')
+            ->layoutData(['type' => 'auth']);
     }
 }

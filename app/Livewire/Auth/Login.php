@@ -9,7 +9,7 @@ use Livewire\Attributes\Rule;
 
 use Livewire\Component;
 
-#[Layout('layouts.auth')]
+#[Layout('layouts.guest')]
 #[Title('Login - AdminPro')]
 class Login extends Component
 {
@@ -35,6 +35,7 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('livewire.auth.login')
+            ->layoutData(['type' => 'auth']);
     }
 }
