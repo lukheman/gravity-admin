@@ -20,22 +20,22 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.button variant="primary"&gt;Primary&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="secondary"&gt;Secondary&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="success"&gt;Success&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="warning"&gt;Warning&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="danger"&gt;Danger&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="outline"&gt;Outline&lt;/x-admin.button&gt;</code></pre>
+        <pre><code>&lt;x-button variant="primary"&gt;Primary&lt;/x-button&gt;
+&lt;x-button variant="secondary"&gt;Secondary&lt;/x-button&gt;
+&lt;x-button variant="success"&gt;Success&lt;/x-button&gt;
+&lt;x-button variant="warning"&gt;Warning&lt;/x-button&gt;
+&lt;x-button variant="danger"&gt;Danger&lt;/x-button&gt;
+&lt;x-button variant="outline"&gt;Outline&lt;/x-button&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2">
-            <x-admin.button variant="primary">Primary</x-admin.button>
-            <x-admin.button variant="secondary">Secondary</x-admin.button>
-            <x-admin.button variant="success">Success</x-admin.button>
-            <x-admin.button variant="warning">Warning</x-admin.button>
-            <x-admin.button variant="danger">Danger</x-admin.button>
-            <x-admin.button variant="outline">Outline</x-admin.button>
+            <x-button variant="primary">Primary</x-button>
+            <x-button variant="secondary">Secondary</x-button>
+            <x-button variant="success">Success</x-button>
+            <x-button variant="warning">Warning</x-button>
+            <x-button variant="danger">Danger</x-button>
+            <x-button variant="outline">Outline</x-button>
         </div>
     </div>
 </div>
@@ -54,18 +54,18 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.button variant="primary" icon="fas fa-plus"&gt;With Icon&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="primary" size="sm"&gt;Small&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="primary"&gt;Default&lt;/x-admin.button&gt;
-&lt;x-admin.button variant="primary" size="lg"&gt;Large&lt;/x-admin.button&gt;</code></pre>
+        <pre><code>&lt;x-button variant="primary" icon="fas fa-plus"&gt;With Icon&lt;/x-button&gt;
+&lt;x-button variant="primary" size="sm"&gt;Small&lt;/x-button&gt;
+&lt;x-button variant="primary"&gt;Default&lt;/x-button&gt;
+&lt;x-button variant="primary" size="lg"&gt;Large&lt;/x-button&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2 align-items-center">
-            <x-admin.button variant="primary" icon="fas fa-plus">With Icon</x-admin.button>
-            <x-admin.button variant="primary" size="sm">Small</x-admin.button>
-            <x-admin.button variant="primary">Default</x-admin.button>
-            <x-admin.button variant="primary" size="lg">Large</x-admin.button>
+            <x-button variant="primary" icon="fas fa-plus">With Icon</x-button>
+            <x-button variant="primary" size="sm">Small</x-button>
+            <x-button variant="primary">Default</x-button>
+            <x-button variant="primary" size="lg">Large</x-button>
         </div>
     </div>
 </div>

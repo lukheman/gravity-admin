@@ -11,8 +11,8 @@
                 <p class="docs-subtitle mb-0">Comprehensive UI component documentation with live examples</p>
             </div>
             <div class="d-flex align-items-center gap-2">
-                <x-admin.badge variant="primary" icon="fas fa-cubes">33 Components</x-admin.badge>
-                <x-admin.badge variant="success" icon="fas fa-moon">Dark Mode Ready</x-admin.badge>
+                <x-badge variant="primary" icon="fas fa-cubes">33 Components</x-badge>
+                <x-badge variant="success" icon="fas fa-moon">Dark Mode Ready</x-badge>
             </div>
         </div>
     </div>

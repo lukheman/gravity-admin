@@ -19,36 +19,36 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']"&gt;
+        <pre><code>&lt;x-table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']"&gt;
     &lt;tr&gt;
         &lt;td&gt;#001&lt;/td&gt;
         &lt;td&gt;John Doe&lt;/td&gt;
         &lt;td&gt;$129.99&lt;/td&gt;
-        &lt;td&gt;&lt;x-admin.badge variant="success"&gt;Completed&lt;/x-admin.badge&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;x-badge variant="success"&gt;Completed&lt;/x-badge&gt;&lt;/td&gt;
     &lt;/tr&gt;
-&lt;/x-admin.table-card&gt;</code></pre>
+&lt;/x-table-card&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']">
+        <x-table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']">
             <tr>
                 <td><strong style="color: var(--text-primary);">#001</strong></td>
                 <td>John Doe</td>
                 <td>$129.99</td>
-                <td><x-admin.badge variant="success" icon="fas fa-check">Completed</x-admin.badge></td>
+                <td><x-badge variant="success" icon="fas fa-check">Completed</x-badge></td>
             </tr>
             <tr>
                 <td><strong style="color: var(--text-primary);">#002</strong></td>
                 <td>Jane Smith</td>
                 <td>$89.50</td>
-                <td><x-admin.badge variant="warning" icon="fas fa-clock">Pending</x-admin.badge></td>
+                <td><x-badge variant="warning" icon="fas fa-clock">Pending</x-badge></td>
             </tr>
             <tr>
                 <td><strong style="color: var(--text-primary);">#003</strong></td>
                 <td>Robert Johnson</td>
                 <td>$249.00</td>
-                <td><x-admin.badge variant="primary" icon="fas fa-truck">Shipping</x-admin.badge></td>
+                <td><x-badge variant="primary" icon="fas fa-truck">Shipping</x-badge></td>
             </tr>
-        </x-admin.table-card>
+        </x-table-card>
     </div>
 </div>

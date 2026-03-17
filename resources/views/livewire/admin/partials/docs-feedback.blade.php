@@ -20,13 +20,13 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.progress-bar :value="75" label="Progress" variant="primary" /&gt;
-&lt;x-admin.progress-bar :value="45" label="Storage" variant="warning" /&gt;</code></pre>
+        <pre><code>&lt;x-progress-bar :value="75" label="Progress" variant="primary" /&gt;
+&lt;x-progress-bar :value="45" label="Storage" variant="warning" /&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.progress-bar :value="75" label="Progress" variant="primary" class="mb-3" />
-        <x-admin.progress-bar :value="45" label="Storage" variant="warning" />
+        <x-progress-bar :value="75" label="Progress" variant="primary" class="mb-3" />
+        <x-progress-bar :value="45" label="Storage" variant="warning" />
     </div>
 </div>
 
@@ -44,24 +44,24 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.skeleton type="text" :count="3" /&gt;
-&lt;x-admin.skeleton type="circle" /&gt;
-&lt;x-admin.skeleton type="table" :count="2" /&gt;</code></pre>
+        <pre><code>&lt;x-skeleton type="text" :count="3" /&gt;
+&lt;x-skeleton type="circle" /&gt;
+&lt;x-skeleton type="table" :count="2" /&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-4">
             <div class="col-md-4">
                 <small class="text-muted d-block mb-2">Text:</small>
-                <x-admin.skeleton type="text" :count="3" />
+                <x-skeleton type="text" :count="3" />
             </div>
             <div class="col-md-4">
                 <small class="text-muted d-block mb-2">Circle:</small>
-                <x-admin.skeleton type="circle" />
+                <x-skeleton type="circle" />
             </div>
             <div class="col-md-4">
                 <small class="text-muted d-block mb-2">Table:</small>
-                <x-admin.skeleton type="table" :count="2" />
+                <x-skeleton type="table" :count="2" />
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.empty-state
+        <pre><code>&lt;x-empty-state
     icon="fas fa-inbox"
     title="No data found"
     description="Start by adding your first item."
@@ -91,7 +91,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.empty-state icon="fas fa-inbox" title="No data found" description="Start by adding your first item."
+        <x-empty-state icon="fas fa-inbox" title="No data found" description="Start by adding your first item."
             actionLabel="Add Item" actionHref="#" size="sm" />
     </div>
 </div>
@@ -110,25 +110,25 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.tooltip content="This is a tooltip" position="top"&gt;
-    &lt;x-admin.button variant="primary"&gt;Hover me&lt;/x-admin.button&gt;
-&lt;/x-admin.tooltip&gt;</code></pre>
+        <pre><code>&lt;x-tooltip content="This is a tooltip" position="top"&gt;
+    &lt;x-button variant="primary"&gt;Hover me&lt;/x-button&gt;
+&lt;/x-tooltip&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex gap-2 flex-wrap">
-            <x-admin.tooltip content="Top tooltip" position="top">
-                <x-admin.button variant="outline">Top</x-admin.button>
-            </x-admin.tooltip>
-            <x-admin.tooltip content="Right tooltip" position="right">
-                <x-admin.button variant="outline">Right</x-admin.button>
-            </x-admin.tooltip>
-            <x-admin.tooltip content="Bottom tooltip" position="bottom">
-                <x-admin.button variant="outline">Bottom</x-admin.button>
-            </x-admin.tooltip>
-            <x-admin.tooltip content="Left tooltip" position="left">
-                <x-admin.button variant="outline">Left</x-admin.button>
-            </x-admin.tooltip>
+            <x-tooltip content="Top tooltip" position="top">
+                <x-button variant="outline">Top</x-button>
+            </x-tooltip>
+            <x-tooltip content="Right tooltip" position="right">
+                <x-button variant="outline">Right</x-button>
+            </x-tooltip>
+            <x-tooltip content="Bottom tooltip" position="bottom">
+                <x-button variant="outline">Bottom</x-button>
+            </x-tooltip>
+            <x-tooltip content="Left tooltip" position="left">
+                <x-button variant="outline">Left</x-button>
+            </x-tooltip>
         </div>
     </div>
 </div>

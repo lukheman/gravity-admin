@@ -19,20 +19,20 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.badge variant="primary"&gt;Primary&lt;/x-admin.badge&gt;
-&lt;x-admin.badge variant="success" icon="fas fa-check"&gt;Success&lt;/x-admin.badge&gt;
-&lt;x-admin.badge variant="warning" icon="fas fa-clock"&gt;Pending&lt;/x-admin.badge&gt;
-&lt;x-admin.badge variant="danger" icon="fas fa-times"&gt;Error&lt;/x-admin.badge&gt;
-&lt;x-admin.badge variant="info" icon="fas fa-info"&gt;Info&lt;/x-admin.badge&gt;</code></pre>
+        <pre><code>&lt;x-badge variant="primary"&gt;Primary&lt;/x-badge&gt;
+&lt;x-badge variant="success" icon="fas fa-check"&gt;Success&lt;/x-badge&gt;
+&lt;x-badge variant="warning" icon="fas fa-clock"&gt;Pending&lt;/x-badge&gt;
+&lt;x-badge variant="danger" icon="fas fa-times"&gt;Error&lt;/x-badge&gt;
+&lt;x-badge variant="info" icon="fas fa-info"&gt;Info&lt;/x-badge&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2">
-            <x-admin.badge variant="primary">Primary</x-admin.badge>
-            <x-admin.badge variant="success" icon="fas fa-check">Success</x-admin.badge>
-            <x-admin.badge variant="warning" icon="fas fa-clock">Pending</x-admin.badge>
-            <x-admin.badge variant="danger" icon="fas fa-times">Error</x-admin.badge>
-            <x-admin.badge variant="info" icon="fas fa-info">Info</x-admin.badge>
+            <x-badge variant="primary">Primary</x-badge>
+            <x-badge variant="success" icon="fas fa-check">Success</x-badge>
+            <x-badge variant="warning" icon="fas fa-clock">Pending</x-badge>
+            <x-badge variant="danger" icon="fas fa-times">Error</x-badge>
+            <x-badge variant="info" icon="fas fa-info">Info</x-badge>
         </div>
     </div>
 </div>

@@ -19,35 +19,35 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.alert variant="success" title="Success!"&gt;
+        <pre><code>&lt;x-alert variant="success" title="Success!"&gt;
     Operation completed successfully.
-&lt;/x-admin.alert&gt;
+&lt;/x-alert&gt;
 
-&lt;x-admin.alert variant="danger" title="Error!"&gt;
+&lt;x-alert variant="danger" title="Error!"&gt;
     Something went wrong.
-&lt;/x-admin.alert&gt;
+&lt;/x-alert&gt;
 
-&lt;x-admin.alert variant="warning" title="Warning!"&gt;
+&lt;x-alert variant="warning" title="Warning!"&gt;
     Please check your input.
-&lt;/x-admin.alert&gt;
+&lt;/x-alert&gt;
 
-&lt;x-admin.alert variant="info" title="Info"&gt;
+&lt;x-alert variant="info" title="Info"&gt;
     You have new notifications.
-&lt;/x-admin.alert&gt;</code></pre>
+&lt;/x-alert&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.alert variant="success" title="Success!" class="mb-3">
+        <x-alert variant="success" title="Success!" class="mb-3">
             Operation completed successfully.
-        </x-admin.alert>
-        <x-admin.alert variant="danger" title="Error!" class="mb-3">
+        </x-alert>
+        <x-alert variant="danger" title="Error!" class="mb-3">
             Something went wrong.
-        </x-admin.alert>
-        <x-admin.alert variant="warning" title="Warning!" class="mb-3">
+        </x-alert>
+        <x-alert variant="warning" title="Warning!" class="mb-3">
             Please check your input.
-        </x-admin.alert>
-        <x-admin.alert variant="info" title="Info">
+        </x-alert>
+        <x-alert variant="info" title="Info">
             You have new notifications.
-        </x-admin.alert>
+        </x-alert>
     </div>
 </div>

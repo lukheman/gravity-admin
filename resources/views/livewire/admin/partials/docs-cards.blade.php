@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.stat-card
+        <pre><code>&lt;x-stat-card
     icon="fas fa-users"
     label="Total Users"
     value="1,234"
@@ -33,15 +33,15 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-4">
-                <x-admin.stat-card icon="fas fa-users" label="Total Users" value="1,234"
+                <x-stat-card icon="fas fa-users" label="Total Users" value="1,234"
                     trend-value="12% from last month" trend-direction="up" variant="primary" />
             </div>
             <div class="col-md-4">
-                <x-admin.stat-card icon="fas fa-dollar-sign" label="Revenue" value="$48,574"
+                <x-stat-card icon="fas fa-dollar-sign" label="Revenue" value="$48,574"
                     trend-value="8% from last month" trend-direction="up" variant="success" />
             </div>
             <div class="col-md-4">
-                <x-admin.stat-card icon="fas fa-chart-pie" label="Conversion" value="3.24%"
+                <x-stat-card icon="fas fa-chart-pie" label="Conversion" value="3.24%"
                     trend-value="2% from last month" trend-direction="down" variant="warning" />
             </div>
         </div>
@@ -62,7 +62,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.feature-card
+        <pre><code>&lt;x-feature-card
     icon="fas fa-rocket"
     title="Fast Performance"
     description="Lightning fast load times"
@@ -73,15 +73,15 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-4">
-                <x-admin.feature-card icon="fas fa-rocket" title="Fast Performance"
+                <x-feature-card icon="fas fa-rocket" title="Fast Performance"
                     description="Lightning fast load times" variant="primary" />
             </div>
             <div class="col-md-4">
-                <x-admin.feature-card icon="fas fa-shield-alt" title="Secure" description="Enterprise-grade security"
+                <x-feature-card icon="fas fa-shield-alt" title="Secure" description="Enterprise-grade security"
                     variant="success" />
             </div>
             <div class="col-md-4">
-                <x-admin.feature-card icon="fas fa-mobile-alt" title="Responsive" description="Perfect on any device"
+                <x-feature-card icon="fas fa-mobile-alt" title="Responsive" description="Perfect on any device"
                     variant="secondary" />
             </div>
         </div>
@@ -102,15 +102,15 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.modern-card&gt;
+        <pre><code>&lt;x-modern-card&gt;
     Your content here...
-&lt;/x-admin.modern-card&gt;</code></pre>
+&lt;/x-modern-card&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.modern-card>
+        <x-modern-card>
             <p class="mb-0" style="color: var(--text-primary);">This is a modern card with beautiful styling and hover
                 effects. Perfect for any content type.</p>
-        </x-admin.modern-card>
+        </x-modern-card>
     </div>
 </div>

@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.input
+        <pre><code>&lt;x-input
     label="Email"
     name="email"
     type="email"
@@ -30,7 +30,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.input label="Email" name="email" type="email" placeholder="Enter your email" required />
+        <x-input label="Email" name="email" type="email" placeholder="Enter your email" required />
     </div>
 </div>
 
@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.textarea
+        <pre><code>&lt;x-textarea
     label="Description"
     name="description"
     placeholder="Enter description"
@@ -58,7 +58,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.textarea label="Description" name="description" placeholder="Enter description" rows="3"
+        <x-textarea label="Description" name="description" placeholder="Enter description" rows="3"
             hint="Maximum 500 characters" />
     </div>
 </div>
@@ -77,13 +77,13 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.date-picker
+        <pre><code>&lt;x-date-picker
     label="Birth Date"
     name="birth_date"
     type="date"
 /&gt;
 
-&lt;x-admin.date-picker
+&lt;x-date-picker
     label="Meeting Time"
     name="meeting"
     type="datetime-local"
@@ -93,10 +93,10 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-6">
-                <x-admin.date-picker label="Birth Date" name="birth_date" type="date" />
+                <x-date-picker label="Birth Date" name="birth_date" type="date" />
             </div>
             <div class="col-md-6">
-                <x-admin.date-picker label="Meeting Time" name="meeting" type="datetime-local" />
+                <x-date-picker label="Meeting Time" name="meeting" type="datetime-local" />
             </div>
         </div>
     </div>

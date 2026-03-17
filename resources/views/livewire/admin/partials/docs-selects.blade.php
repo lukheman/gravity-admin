@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.select
+        <pre><code>&lt;x-select
     label="Country"
     name="country"
     :options="['id' => 'Indonesia', 'my' => 'Malaysia', 'sg' => 'Singapore']"
@@ -29,7 +29,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.select label="Country" name="country" :options="['id' => 'Indonesia', 'my' => 'Malaysia', 'sg' => 'Singapore']" placeholder="Select country" />
+        <x-select label="Country" name="country" :options="['id' => 'Indonesia', 'my' => 'Malaysia', 'sg' => 'Singapore']" placeholder="Select country" />
     </div>
 </div>
 
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.search-select
+        <pre><code>&lt;x-search-select
     label="City"
     name="city"
     :options="['jkt' => 'Jakarta', 'sby' => 'Surabaya', 'bdg' => 'Bandung', 'mdn' => 'Medan']"
@@ -56,7 +56,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.search-select label="City" name="city" :options="['jkt' => 'Jakarta', 'sby' => 'Surabaya', 'bdg' => 'Bandung', 'mdn' => 'Medan']" placeholder="Search city..." />
+        <x-search-select label="City" name="city" :options="['jkt' => 'Jakarta', 'sby' => 'Surabaya', 'bdg' => 'Bandung', 'mdn' => 'Medan']" placeholder="Search city..." />
     </div>
 </div>
 
@@ -74,26 +74,26 @@
         </div>
     </div>
     <div class="docs-code">
-        <pre><code>&lt;x-admin.dropdown&gt;
+        <pre><code>&lt;x-dropdown&gt;
     &lt;x-slot:trigger&gt;
-        &lt;x-admin.button variant="primary"&gt;
+        &lt;x-button variant="primary"&gt;
             Actions &lt;i class="fas fa-chevron-down ms-2"&gt;&lt;/i&gt;
-        &lt;/x-admin.button&gt;
+        &lt;/x-button&gt;
     &lt;/x-slot:trigger&gt;
 
     &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt; Edit&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;&lt;i class="fas fa-copy"&gt;&lt;/i&gt; Duplicate&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="dropdown-item text-danger" href="#"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt; Delete&lt;/a&gt;&lt;/li&gt;
-&lt;/x-admin.dropdown&gt;</code></pre>
+&lt;/x-dropdown&gt;</code></pre>
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-admin.dropdown>
+        <x-dropdown>
             <x-slot:trigger>
-                <x-admin.button variant="primary">
+                <x-button variant="primary">
                     Actions <i class="fas fa-chevron-down ms-2"></i>
-                </x-admin.button>
+                </x-button>
             </x-slot:trigger>
 
             <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit</a></li>
@@ -102,6 +102,6 @@
                 <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash"></i> Delete</a></li>
-        </x-admin.dropdown>
+        </x-dropdown>
     </div>
 </div>

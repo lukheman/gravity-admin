@@ -71,7 +71,7 @@ If you prefer to set up manually:
    ```
 
 4. **Configure database**
-   
+
    Update your `.env` file with database credentials:
    ```env
    DB_CONNECTION=mysql
@@ -162,7 +162,7 @@ Located in `resources/views/components/admin/`:
 
 - **Layout Components**
   - `layout.blade.php` - Main admin layout wrapper
-  - `livewire-layout.blade.php` - Layout for Livewire pages
+  - `app.blade.php` - Layout for Livewire pages
   - `sidebar.blade.php` - Sidebar navigation
   - `topbar.blade.php` - Top navigation bar
 
@@ -245,30 +245,30 @@ php artisan test
 
 3. Use the admin layout in your view:
    ```blade
-   <x-admin.livewire-layout>
-       <x-admin.page-header 
+   <x-livewire-layout>
+       <x-page-header
            title="Your Page Title"
            description="Page description"
        />
-       
-       <x-admin.modern-card>
+
+       <x-modern-card>
            <!-- Your content -->
-       </x-admin.modern-card>
-   </x-admin.livewire-layout>
+       </x-modern-card>
+   </x-livewire-layout>
    ```
 
 ### Using Component Examples
 
 **Button Component:**
 ```blade
-<x-admin.button type="primary" size="md">
+<x-button type="primary" size="md">
     Save Changes
-</x-admin.button>
+</x-button>
 ```
 
 **Input Component:**
 ```blade
-<x-admin.input 
+<x-input
     label="Email"
     type="email"
     name="email"
@@ -278,9 +278,9 @@ php artisan test
 
 **Alert Component:**
 ```blade
-<x-admin.alert type="success">
+<x-alert type="success">
     Operation completed successfully!
-</x-admin.alert>
+</x-alert>
 ```
 
 ## 🤝 Contributing
