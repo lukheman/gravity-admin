@@ -1,4 +1,4 @@
-<div>
+<div class="mt-4">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
