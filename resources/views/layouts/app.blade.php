@@ -549,6 +549,10 @@
             color: var(--danger-color);
         }
 
+        .action-btn-view {
+            color: var(--secondary-color);
+        }
+
         /* Pagination */
         .pagination {
             --bs-pagination-bg: var(--bg-secondary);
