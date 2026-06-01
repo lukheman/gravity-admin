@@ -1,0 +1,19 @@
+# AI Agent Instructions: UI Component & Styling Usage
+
+When asked to build a new feature or modify an existing one, you **MUST** adhere to the following rules regarding styling, layouts, and components:
+
+### 1. Framework & Styling (Bootstrap)
+- The project uses **Bootstrap** as its primary CSS framework, as configured in the layout templates.
+- Use standard Bootstrap classes for layout, typography, spacing, and styling.
+
+### 2. Layout Usage
+- Always extend the appropriate layout file when creating new views:
+  - Use `resources/views/layouts/app.blade.php` for authenticated/dashboard views.
+  - Use `resources/views/layouts/guest.blade.php` for public/unauthenticated views (like login, register, etc.).
+
+### 3. Component Usage
+- **Analyze Existing Components**: Before writing any new UI code or HTML, always check the `resources/views/components` directory to see if a suitable component already exists (e.g., buttons, inputs, form groups, modals, cards, tables, etc.).
+- **Reuse First**: If a component exists that fits the requirement, you must use it instead of writing raw HTML/CSS from scratch.
+- **Modify with Care**: If an existing component is close to what you need, prefer modifying it by adding optional props rather than duplicating it, ensuring backward compatibility with existing usages.
+- **Create Only When Necessary**: Only create a new component in `resources/views/components` or write inline custom UI code if you are absolutely certain that no existing component can serve the purpose.
+- **Consistency**: When you do create a new component, ensure it is built using **Bootstrap** classes and matches the styling, structure, and naming conventions of the other components.
