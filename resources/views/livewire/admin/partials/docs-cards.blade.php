@@ -33,15 +33,15 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-4">
-                <x-stat-card icon="fas fa-users" label="Total Users" value="1,234"
+                <x-layout.stat-card icon="fas fa-users" label="Total Users" value="1,234"
                     trend-value="12% from last month" trend-direction="up" variant="primary" />
             </div>
             <div class="col-md-4">
-                <x-stat-card icon="fas fa-dollar-sign" label="Revenue" value="$48,574"
+                <x-layout.stat-card icon="fas fa-dollar-sign" label="Revenue" value="$48,574"
                     trend-value="8% from last month" trend-direction="up" variant="success" />
             </div>
             <div class="col-md-4">
-                <x-stat-card icon="fas fa-chart-pie" label="Conversion" value="3.24%"
+                <x-layout.stat-card icon="fas fa-chart-pie" label="Conversion" value="3.24%"
                     trend-value="2% from last month" trend-direction="down" variant="warning" />
             </div>
         </div>
@@ -73,15 +73,15 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-4">
-                <x-feature-card icon="fas fa-rocket" title="Fast Performance"
+                <x-layout.feature-card icon="fas fa-rocket" title="Fast Performance"
                     description="Lightning fast load times" variant="primary" />
             </div>
             <div class="col-md-4">
-                <x-feature-card icon="fas fa-shield-alt" title="Secure" description="Enterprise-grade security"
+                <x-layout.feature-card icon="fas fa-shield-alt" title="Secure" description="Enterprise-grade security"
                     variant="success" />
             </div>
             <div class="col-md-4">
-                <x-feature-card icon="fas fa-mobile-alt" title="Responsive" description="Perfect on any device"
+                <x-layout.feature-card icon="fas fa-mobile-alt" title="Responsive" description="Perfect on any device"
                     variant="secondary" />
             </div>
         </div>
@@ -108,9 +108,9 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-modern-card>
+        <x-layout.modern-card>
             <p class="mb-0" style="color: var(--text-primary);">This is a modern card with beautiful styling and hover
                 effects. Perfect for any content type.</p>
-        </x-modern-card>
+        </x-layout.modern-card>
     </div>
 </div>

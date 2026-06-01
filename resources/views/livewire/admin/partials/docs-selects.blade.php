@@ -29,7 +29,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-select label="Country" name="country" :options="['id' => 'Indonesia', 'my' => 'Malaysia', 'sg' => 'Singapore']" placeholder="Select country" />
+        <x-form.select label="Country" name="country" :options="['id' => 'Indonesia', 'my' => 'Malaysia', 'sg' => 'Singapore']" placeholder="Select country" />
     </div>
 </div>
 
@@ -56,7 +56,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-search-select label="City" name="city" :options="['jkt' => 'Jakarta', 'sby' => 'Surabaya', 'bdg' => 'Bandung', 'mdn' => 'Medan']" placeholder="Search city..." />
+        <x-form.search-select label="City" name="city" :options="['jkt' => 'Jakarta', 'sby' => 'Surabaya', 'bdg' => 'Bandung', 'mdn' => 'Medan']" placeholder="Search city..." />
     </div>
 </div>
 
@@ -89,11 +89,11 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-dropdown>
+        <x-ui.dropdown>
             <x-slot:trigger>
-                <x-button variant="primary">
+                <x-ui.button variant="primary">
                     Actions <i class="fas fa-chevron-down ms-2"></i>
-                </x-button>
+                </x-ui.button>
             </x-slot:trigger>
 
             <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit</a></li>
@@ -102,6 +102,6 @@
                 <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash"></i> Delete</a></li>
-        </x-dropdown>
+        </x-ui.dropdown>
     </div>
 </div>

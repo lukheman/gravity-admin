@@ -29,23 +29,23 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex align-items-center gap-3 flex-wrap">
             <div class="text-center">
-                <x-avatar name="JD" size="xs" />
+                <x-ui.avatar name="JD" size="xs" />
                 <div class="mt-1"><small class="text-muted">xs</small></div>
             </div>
             <div class="text-center">
-                <x-avatar name="Jane Smith" size="sm" status="online" />
+                <x-ui.avatar name="Jane Smith" size="sm" status="online" />
                 <div class="mt-1"><small class="text-muted">sm + online</small></div>
             </div>
             <div class="text-center">
-                <x-avatar name="Admin User" size="md" status="away" />
+                <x-ui.avatar name="Admin User" size="md" status="away" />
                 <div class="mt-1"><small class="text-muted">md + away</small></div>
             </div>
             <div class="text-center">
-                <x-avatar name="Test User" size="lg" status="busy" />
+                <x-ui.avatar name="Test User" size="lg" status="busy" />
                 <div class="mt-1"><small class="text-muted">lg + busy</small></div>
             </div>
             <div class="text-center">
-                <x-avatar name="XL Avatar" size="xl" status="offline" />
+                <x-ui.avatar name="XL Avatar" size="xl" status="offline" />
                 <div class="mt-1"><small class="text-muted">xl + offline</small></div>
             </div>
         </div>
@@ -123,6 +123,6 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-file-upload label="Upload Image" name="image" accept="image/*" maxSize="2MB" />
+        <x-form.file-upload label="Upload Image" name="image" accept="image/*" maxSize="2MB" />
     </div>
 </div>

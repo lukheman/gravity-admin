@@ -30,12 +30,12 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2">
-            <x-button variant="primary">Primary</x-button>
-            <x-button variant="secondary">Secondary</x-button>
-            <x-button variant="success">Success</x-button>
-            <x-button variant="warning">Warning</x-button>
-            <x-button variant="danger">Danger</x-button>
-            <x-button variant="outline">Outline</x-button>
+            <x-ui.button variant="primary">Primary</x-ui.button>
+            <x-ui.button variant="secondary">Secondary</x-ui.button>
+            <x-ui.button variant="success">Success</x-ui.button>
+            <x-ui.button variant="warning">Warning</x-ui.button>
+            <x-ui.button variant="danger">Danger</x-ui.button>
+            <x-ui.button variant="outline">Outline</x-ui.button>
         </div>
     </div>
 </div>
@@ -62,10 +62,10 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2 align-items-center">
-            <x-button variant="primary" icon="fas fa-plus">With Icon</x-button>
-            <x-button variant="primary" size="sm">Small</x-button>
-            <x-button variant="primary">Default</x-button>
-            <x-button variant="primary" size="lg">Large</x-button>
+            <x-ui.button variant="primary" icon="fas fa-plus">With Icon</x-ui.button>
+            <x-ui.button variant="primary" size="sm">Small</x-ui.button>
+            <x-ui.button variant="primary">Default</x-ui.button>
+            <x-ui.button variant="primary" size="lg">Large</x-ui.button>
         </div>
     </div>
 </div>

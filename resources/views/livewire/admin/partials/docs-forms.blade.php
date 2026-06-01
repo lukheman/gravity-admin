@@ -30,7 +30,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-input label="Email" name="email" type="email" placeholder="Enter your email" required />
+        <x-form.input label="Email" name="email" type="email" placeholder="Enter your email" required />
     </div>
 </div>
 
@@ -58,7 +58,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-textarea label="Description" name="description" placeholder="Enter description" rows="3"
+        <x-form.textarea label="Description" name="description" placeholder="Enter description" rows="3"
             hint="Maximum 500 characters" />
     </div>
 </div>
@@ -93,10 +93,10 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="row g-3">
             <div class="col-md-6">
-                <x-date-picker label="Birth Date" name="birth_date" type="date" />
+                <x-form.date-picker label="Birth Date" name="birth_date" type="date" />
             </div>
             <div class="col-md-6">
-                <x-date-picker label="Meeting Time" name="meeting" type="datetime-local" />
+                <x-form.date-picker label="Meeting Time" name="meeting" type="datetime-local" />
             </div>
         </div>
     </div>

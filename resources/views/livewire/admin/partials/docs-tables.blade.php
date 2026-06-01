@@ -30,25 +30,25 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']">
+        <x-layout.table-card title="Recent Orders" :headers="['ID', 'Customer', 'Amount', 'Status']">
             <tr>
                 <td><strong style="color: var(--text-primary);">#001</strong></td>
                 <td>John Doe</td>
                 <td>$129.99</td>
-                <td><x-badge variant="success" icon="fas fa-check">Completed</x-badge></td>
+                <td><x-ui.badge variant="success" icon="fas fa-check">Completed</x-ui.badge></td>
             </tr>
             <tr>
                 <td><strong style="color: var(--text-primary);">#002</strong></td>
                 <td>Jane Smith</td>
                 <td>$89.50</td>
-                <td><x-badge variant="warning" icon="fas fa-clock">Pending</x-badge></td>
+                <td><x-ui.badge variant="warning" icon="fas fa-clock">Pending</x-ui.badge></td>
             </tr>
             <tr>
                 <td><strong style="color: var(--text-primary);">#003</strong></td>
                 <td>Robert Johnson</td>
                 <td>$249.00</td>
-                <td><x-badge variant="primary" icon="fas fa-truck">Shipping</x-badge></td>
+                <td><x-ui.badge variant="primary" icon="fas fa-truck">Shipping</x-ui.badge></td>
             </tr>
-        </x-table-card>
+        </x-layout.table-card>
     </div>
 </div>

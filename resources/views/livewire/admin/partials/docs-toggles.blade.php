@@ -27,9 +27,9 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-column gap-3">
-            <x-toggle label="Enable notifications" name="notifications" />
-            <x-toggle label="Dark mode" name="dark" checked />
-            <x-toggle onLabel="On" offLabel="Off" name="status" size="lg" />
+            <x-form.toggle label="Enable notifications" name="notifications" />
+            <x-form.toggle label="Dark mode" name="dark" checked />
+            <x-form.toggle onLabel="On" offLabel="Off" name="status" size="lg" />
         </div>
     </div>
 </div>
@@ -55,9 +55,9 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-column gap-2">
-            <x-checkbox label="Remember me" name="remember" />
-            <x-checkbox label="I agree to terms" name="terms" checked />
-            <x-checkbox label="Disabled option" name="disabled" disabled />
+            <x-form.checkbox label="Remember me" name="remember" />
+            <x-form.checkbox label="I agree to terms" name="terms" checked />
+            <x-form.checkbox label="Disabled option" name="disabled" disabled />
         </div>
     </div>
 </div>
@@ -83,9 +83,9 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-column gap-2">
-            <x-radio label="Option 1" name="option" value="1" checked />
-            <x-radio label="Option 2" name="option" value="2" />
-            <x-radio label="Option 3" name="option" value="3" />
+            <x-form.radio label="Option 1" name="option" value="1" checked />
+            <x-form.radio label="Option 2" name="option" value="2" />
+            <x-form.radio label="Option 3" name="option" value="3" />
         </div>
     </div>
 </div>

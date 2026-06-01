@@ -28,7 +28,7 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-breadcrumb :items="[
+        <x-ui.breadcrumb :items="[
         ['label' => 'Home', 'href' => '#', 'icon' => 'fas fa-home'],
         ['label' => 'Users', 'href' => '#'],
         ['label' => 'Edit User'],
@@ -66,19 +66,19 @@
         <div class="docs-preview-label">Live Preview</div>
         <div class="mb-4">
             <small class="text-muted d-block mb-2">Default:</small>
-            <x-tabs>
+            <x-ui.tabs>
                 <li class="nav-item"><a class="nav-link active" href="#">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Security</a></li>
-            </x-tabs>
+            </x-ui.tabs>
         </div>
         <div>
             <small class="text-muted d-block mb-2">Pills:</small>
-            <x-tabs variant="pills">
+            <x-ui.tabs variant="pills">
                 <li class="nav-item"><a class="nav-link active" href="#">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Security</a></li>
-            </x-tabs>
+            </x-ui.tabs>
         </div>
     </div>
 </div>

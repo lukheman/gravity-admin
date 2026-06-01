@@ -570,26 +570,26 @@
 </head>
 <body>
     <!-- Sidebar -->
-    <x-sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
-        <x-sidebar-section title="Main">
-            <x-sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home" :active="request()->routeIs('dashboard')">Dashboard</x-sidebar-link>
-            <x-sidebar-link href="{{ route('admin.users') }}" icon="fas fa-users" :active="request()->routeIs('admin.users')">Users</x-sidebar-link>
-        </x-sidebar-section>
+    <x-layout.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
+        <x-layout.sidebar-section title="Main">
+            <x-layout.sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home" :active="request()->routeIs('dashboard')">Dashboard</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="{{ route('admin.users') }}" icon="fas fa-users" :active="request()->routeIs('admin.users')">Users</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
 
-        <x-sidebar-section title="Account">
-            <x-sidebar-link href="{{ route('admin.profile') }}" icon="fas fa-user-circle" :active="request()->routeIs('admin.profile')">Profile</x-sidebar-link>
-            <x-sidebar-link href="#settings" icon="fas fa-cog">Settings</x-sidebar-link>
-        </x-sidebar-section>
+        <x-layout.sidebar-section title="Account">
+            <x-layout.sidebar-link href="{{ route('admin.profile') }}" icon="fas fa-user-circle" :active="request()->routeIs('admin.profile')">Profile</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="#settings" icon="fas fa-cog">Settings</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
 
-        <x-sidebar-section title="Developer">
-            <x-sidebar-link href="{{ route('admin.components') }}" icon="fas fa-cubes" :active="request()->routeIs('admin.components')">Components</x-sidebar-link>
-        </x-sidebar-section>
-    </x-sidebar>
+        <x-layout.sidebar-section title="Developer">
+            <x-layout.sidebar-link href="{{ route('admin.components') }}" icon="fas fa-cubes" :active="request()->routeIs('admin.components')">Components</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
+    </x-layout.sidebar>
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Top Bar -->
-        <x-topbar
+        <x-layout.topbar
             :user-name="Auth::user()?->name ?? 'Guest'"
             user-role="Administrator"
             :notification-count="0"

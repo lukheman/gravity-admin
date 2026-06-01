@@ -37,17 +37,17 @@
     </div>
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
-        <x-alert variant="success" title="Success!" class="mb-3">
+        <x-ui.alert variant="success" title="Success!" class="mb-3">
             Operation completed successfully.
-        </x-alert>
-        <x-alert variant="danger" title="Error!" class="mb-3">
+        </x-ui.alert>
+        <x-ui.alert variant="danger" title="Error!" class="mb-3">
             Something went wrong.
-        </x-alert>
-        <x-alert variant="warning" title="Warning!" class="mb-3">
+        </x-ui.alert>
+        <x-ui.alert variant="warning" title="Warning!" class="mb-3">
             Please check your input.
-        </x-alert>
-        <x-alert variant="info" title="Info">
+        </x-ui.alert>
+        <x-ui.alert variant="info" title="Info">
             You have new notifications.
-        </x-alert>
+        </x-ui.alert>
     </div>
 </div>

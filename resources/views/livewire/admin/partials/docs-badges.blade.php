@@ -28,11 +28,11 @@
     <div class="docs-preview">
         <div class="docs-preview-label">Live Preview</div>
         <div class="d-flex flex-wrap gap-2">
-            <x-badge variant="primary">Primary</x-badge>
-            <x-badge variant="success" icon="fas fa-check">Success</x-badge>
-            <x-badge variant="warning" icon="fas fa-clock">Pending</x-badge>
-            <x-badge variant="danger" icon="fas fa-times">Error</x-badge>
-            <x-badge variant="info" icon="fas fa-info">Info</x-badge>
+            <x-ui.badge variant="primary">Primary</x-ui.badge>
+            <x-ui.badge variant="success" icon="fas fa-check">Success</x-ui.badge>
+            <x-ui.badge variant="warning" icon="fas fa-clock">Pending</x-ui.badge>
+            <x-ui.badge variant="danger" icon="fas fa-times">Error</x-ui.badge>
+            <x-ui.badge variant="info" icon="fas fa-info">Info</x-ui.badge>
         </div>
     </div>
 </div>
