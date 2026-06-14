@@ -123,7 +123,7 @@
 <style>
     .docs-header {
         padding: 1.5rem 2rem;
-        background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
+        background: var(--bs-primary);
         border-radius: 20px;
         color: white;
     }
@@ -141,22 +141,22 @@
     }
 
     .docs-sidebar {
-        background: var(--bg-secondary);
+        background: var(--bs-body-bg);
         border-radius: 16px;
         padding: 1.25rem;
-        box-shadow: var(--card-shadow);
+        box-shadow: var(--bs-box-shadow);
     }
 
     .docs-search .input-group-text {
-        background: var(--input-bg);
-        border-color: var(--border-color);
-        color: var(--text-muted);
+        background: var(--bs-body-bg);
+        border-color: var(--bs-border-color);
+        color: var(--bs-tertiary-color);
     }
 
     .docs-search .form-control {
-        background: var(--input-bg);
-        border-color: var(--border-color);
-        color: var(--text-primary);
+        background: var(--bs-body-bg);
+        border-color: var(--bs-border-color);
+        color: var(--bs-body-color);
     }
 
     .docs-nav {
@@ -174,7 +174,7 @@
         text-align: left;
         padding: 0.75rem 1rem;
         border-radius: 10px;
-        color: var(--text-secondary);
+        color: var(--bs-secondary-color);
         font-weight: 500;
         transition: all 0.2s;
         cursor: pointer;
@@ -182,12 +182,12 @@
     }
 
     .docs-nav-item:hover {
-        background: var(--hover-bg);
-        color: var(--primary-color);
+        background: var(--bs-tertiary-bg);
+        color: var(--bs-primary);
     }
 
     .docs-nav-item.active {
-        background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
+        background: var(--bs-primary);
         color: white;
     }
 
@@ -204,9 +204,9 @@
     .docs-nav-count {
         font-size: 0.75rem;
         padding: 0.2rem 0.5rem;
-        background: var(--bg-tertiary);
+        background: var(--bs-tertiary-bg);
         border-radius: 20px;
-        color: var(--text-muted);
+        color: var(--bs-tertiary-color);
     }
 
     .docs-stats {
@@ -214,7 +214,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         padding: 1rem;
-        background: var(--bg-tertiary);
+        background: var(--bs-tertiary-bg);
         border-radius: 12px;
     }
 
@@ -225,30 +225,30 @@
     .docs-stat-value {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--primary-color);
+        color: var(--bs-primary);
     }
 
     .docs-stat-label {
         font-size: 0.75rem;
-        color: var(--text-muted);
+        color: var(--bs-tertiary-color);
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
     /* Component Card */
     .docs-card {
-        background: var(--bg-secondary);
+        background: var(--bs-body-bg);
         border-radius: 16px;
         overflow: hidden;
-        box-shadow: var(--card-shadow);
+        box-shadow: var(--bs-box-shadow);
         margin-bottom: 1.5rem;
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--bs-border-color);
     }
 
     .docs-card-header {
         padding: 1rem 1.25rem;
-        background: var(--bg-tertiary);
-        border-bottom: 1px solid var(--border-color);
+        background: var(--bs-tertiary-bg);
+        border-bottom: 1px solid var(--bs-border-color);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -257,7 +257,7 @@
     .docs-card-title {
         font-size: 1rem;
         font-weight: 600;
-        color: var(--text-primary);
+        color: var(--bs-body-color);
         margin: 0;
         display: flex;
         align-items: center;
@@ -265,7 +265,7 @@
     }
 
     .docs-card-title i {
-        color: var(--primary-color);
+        color: var(--bs-primary);
     }
 
     .docs-card-actions {
@@ -274,9 +274,9 @@
     }
 
     .docs-copy-btn {
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
+        background: var(--bs-body-bg);
+        border: 1px solid var(--bs-border-color);
+        color: var(--bs-secondary-color);
         padding: 0.375rem 0.75rem;
         border-radius: 6px;
         font-size: 0.8rem;
@@ -288,8 +288,8 @@
     }
 
     .docs-copy-btn:hover {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
+        background: var(--bs-primary);
+        border-color: var(--bs-primary);
         color: white;
     }
 
@@ -331,14 +331,14 @@
 
     .docs-preview {
         padding: 2rem;
-        background: var(--bg-secondary);
+        background: var(--bs-body-bg);
     }
 
     .docs-preview-label {
         font-size: 0.7rem;
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: var(--text-muted);
+        color: var(--bs-tertiary-color);
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
@@ -349,7 +349,7 @@
         content: '';
         width: 8px;
         height: 8px;
-        background: var(--success-color);
+        background: var(--bs-success);
         border-radius: 50%;
         animation: pulse-dot 2s infinite;
     }
@@ -374,7 +374,7 @@
     .docs-section-title {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--text-primary);
+        color: var(--bs-body-color);
         margin-bottom: 0.5rem;
         display: flex;
         align-items: center;
@@ -382,12 +382,12 @@
     }
 
     .docs-section-title i {
-        color: var(--primary-color);
+        color: var(--bs-primary);
         font-size: 1.25rem;
     }
 
     .docs-section-desc {
-        color: var(--text-muted);
+        color: var(--bs-tertiary-color);
         margin-bottom: 0;
     }
 
@@ -401,32 +401,32 @@
     .docs-props-table td {
         padding: 0.75rem;
         text-align: left;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--bs-border-color);
     }
 
     .docs-props-table th {
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        color: var(--text-muted);
+        color: var(--bs-tertiary-color);
         font-weight: 600;
     }
 
     .docs-props-table td {
-        color: var(--text-primary);
+        color: var(--bs-body-color);
         font-size: 0.875rem;
     }
 
     .docs-props-table code {
-        background: var(--bg-tertiary);
+        background: var(--bs-tertiary-bg);
         padding: 0.125rem 0.5rem;
         border-radius: 4px;
         font-size: 0.8rem;
-        color: var(--primary-color);
+        color: var(--bs-primary);
     }
 
     .docs-prop-required {
-        color: var(--danger-color);
+        color: var(--bs-danger);
         font-size: 0.7rem;
         font-weight: 600;
         margin-left: 0.25rem;
