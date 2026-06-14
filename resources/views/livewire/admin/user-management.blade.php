@@ -22,16 +22,17 @@
     @endif
 
     {{-- Users Table Card --}}
-    <div class="modern-card">
+    <x-layout.modern-card>
         {{-- Search and Filters --}}
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="mb-0" style="color: var(--text-primary); font-weight: 600;">All Users</h5>
-            <div class="input-group" style="max-width: 300px;">
-                <span class="input-group-text" style="background: var(--input-bg); border-color: var(--border-color);">
-                    <i class="fas fa-search" style="color: var(--text-muted);"></i>
-                </span>
-                <input type="text" class="form-control" placeholder="Search users..."
-                    wire:model.live.debounce.300ms="search" style="border-left: none;">
+            <h5 class="mb-0 fw-semibold text-body">All Users</h5>
+            <div style="max-width: 300px; width: 100%;">
+                <x-form.input
+                    wire:model.live.debounce.300ms="search"
+                    placeholder="Search users..."
+                    icon="fas fa-search"
+                    class="mb-0"
+                />
             </div>
         </div>
 
@@ -54,12 +55,12 @@
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="user-avatar">{{ $user->initials() }}</div>
                                     <div>
-                                        <div class="fw-semibold" style="color: var(--text-primary);">{{ $user->name }}</div>
+                                        <div class="fw-semibold text-body">{{ $user->name }}</div>
                                         <small class="text-muted">ID: {{ $user->id }}</small>
                                     </div>
                                 </div>
                             </td>
-                            <td style="color: var(--text-secondary);">{{ $user->email }}</td>
+                            <td class="text-secondary">{{ $user->email }}</td>
                             <td class="text-muted">{{ $user->created_at->format('M d, Y') }}</td>
                             <td>
                                 @if($user->email_verified_at)
@@ -70,24 +71,19 @@
                             </td>
                             <td>
                                 <div class="d-flex gap-1">
-                                    <button class="action-btn action-btn-edit" wire:click="openEditModal({{ $user->id }})"
-                                        title="Edit user">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn action-btn-delete" wire:click="confirmDelete({{ $user->id }})"
-                                        title="Delete user">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
+                                    <x-ui.btn-edit wire:click="openEditModal({{ $user->id }})" tooltip="Edit user" />
+                                    <x-ui.btn-delete wire:click="confirmDelete({{ $user->id }})" tooltip="Delete user" />
                                 </div>
                             </td>
                         </tr>
                     @empty
                         <tr>
                             <td colspan="5" class="text-center py-4">
-                                <div class="text-muted">
-                                    <i class="fas fa-users mb-2" style="font-size: 2rem;"></i>
-                                    <p class="mb-0">No users found</p>
-                                </div>
+                                <x-ui.empty-state
+                                    icon="fas fa-users"
+                                    title="No users found"
+                                    description="Try adjusting your search query or add a new user."
+                                />
                             </td>
                         </tr>
                     @endforelse
@@ -101,7 +97,7 @@
                 {{ $users->links() }}
             </div>
         @endif
-    </div>
+    </x-layout.modern-card>
 
     {{-- Create/Edit Modal --}}
     @if ($showModal)
@@ -117,49 +113,45 @@
                 </div>
 
                 <form wire:submit="save">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name <span style="color: var(--danger-color);">*</span></label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                            wire:model="name" placeholder="Enter full name">
-                        @error('name')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+                    <x-form.input
+                        id="name"
+                        label="Name"
+                        wire:model="name"
+                        placeholder="Enter full name"
+                        required="true"
+                        error="{{ $errors->first('name') }}"
+                    />
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email <span
-                                style="color: var(--danger-color);">*</span></label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                            wire:model="email" placeholder="Enter email address">
-                        @error('email')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+                    <x-form.input
+                        type="email"
+                        id="email"
+                        label="Email"
+                        wire:model="email"
+                        placeholder="Enter email address"
+                        required="true"
+                        error="{{ $errors->first('email') }}"
+                    />
 
-                    <div class="mb-3">
-                        <label for="password" class="form-label">
-                            Password
-                            @if (!$editingUserId)
-                                <span style="color: var(--danger-color);">*</span>
-                            @else
-                                <small class="text-muted">(leave blank to keep current)</small>
-                            @endif
-                        </label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
-                            wire:model="password"
-                            placeholder="{{ $editingUserId ? 'Enter new password' : 'Enter password' }}">
-                        @error('password')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+                    <x-form.input
+                        type="password"
+                        id="password"
+                        label="Password"
+                        wire:model="password"
+                        placeholder="{{ $editingUserId ? 'Enter new password' : 'Enter password' }}"
+                        required="{{ !$editingUserId }}"
+                        hint="{{ $editingUserId ? '(leave blank to keep current)' : '' }}"
+                        error="{{ $errors->first('password') }}"
+                    />
 
-                    <div class="mb-4">
-                        <label for="password_confirmation" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="password_confirmation"
-                            wire:model="password_confirmation" placeholder="Confirm password">
-                    </div>
+                    <x-form.input
+                        type="password"
+                        id="password_confirmation"
+                        label="Confirm Password"
+                        wire:model="password_confirmation"
+                        placeholder="Confirm password"
+                    />
 
-                    <div class="d-flex justify-content-end gap-2">
+                    <div class="d-flex justify-content-end gap-2 mt-4">
                         <x-ui.button type="button" variant="outline" wire:click="closeModal">
                             Cancel
                         </x-ui.button>
