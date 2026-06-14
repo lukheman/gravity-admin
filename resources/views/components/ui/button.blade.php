@@ -26,7 +26,7 @@
     $sizeClass = $sizeClasses[$size] ?? '';
 @endphp
 @if($href)
-    <a href="{{ $href }}" {{ $attributes->merge(['class' => "btn btn-modern {$sizeClass}"]) }} style="{{ $style }}">
+    <a href="{{ $href }}" {{ $attributes->merge(['class' => "btn btn-modern {$sizeClass}", 'style' => $style]) }}>
         @if($icon && $iconPosition === 'left')
             <i class="{{ $icon }} me-2"></i>
         @endif
@@ -36,7 +36,7 @@
     @endif
     </a>
 @else
-    <button type="{{ $type }}" {{ $attributes->merge(['class' => "btn btn-modern {$sizeClass}"]) }} style="{{ $style }}">
+    <button type="{{ $type }}" {{ $attributes->merge(['class' => "btn btn-modern {$sizeClass}", 'style' => $style]) }}>
         @if($icon && $iconPosition === 'left')
             <i class="{{ $icon }} me-2"></i>
         @endif

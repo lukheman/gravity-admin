@@ -14,13 +14,14 @@
     $btnSize = $sizeStyles[$size] ?? $sizeStyles['sm'];
 @endphp
 
-<button
-    {{ $attributes->merge(['class' => 'action-btn action-btn-edit', 'type' => 'button']) }}
-    style="{{ $btnSize }}"
+<x-ui.button
+    variant="primary"
+    :size="$size"
     title="{{ $tooltip }}"
+    {{ $attributes->merge(['class' => 'action-btn action-btn-edit', 'style' => $btnSize]) }}
 >
     <i class="fas fa-edit"></i>
     @if(!$iconOnly)
         <span class="ms-1">{{ $slot->isEmpty() ? 'Edit' : $slot }}</span>
     @endif
-</button>
+</x-ui.button>
