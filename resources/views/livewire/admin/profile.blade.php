@@ -2,7 +2,7 @@
     {{-- Page Header --}}
     <x-layout.page-header title="Profile" subtitle="Kelola informasi akun Anda">
         <x-slot:actions>
-            <x-ui.badge variant="success" icon="fas fa-user-check">
+            <x-ui.badge variant="{{ Auth::user()->email_verified_at ? 'success' : 'warning' }}" icon="{{ Auth::user()->email_verified_at ? 'fas fa-user-check' : 'fas fa-clock' }}">
                 {{ Auth::user()->email_verified_at ? 'Terverifikasi' : 'Belum Terverifikasi' }}
             </x-ui.badge>
         </x-slot:actions>
@@ -24,12 +24,12 @@
     <div class="row g-4">
         {{-- Profile Info Card --}}
         <div class="col-lg-4">
-            <div class="modern-card text-center">
+            <x-layout.modern-card class="text-center">
                 {{-- Avatar Section --}}
                 <div class="position-relative d-inline-block mb-3">
                     @if($currentAvatar)
-                        <img src="{{ Storage::url($currentAvatar) }}" alt="Avatar" class="rounded-circle"
-                            style="width: 120px; height: 120px; object-fit: cover; border: 4px solid var(--primary-color);">
+                        <img src="{{ Storage::url($currentAvatar) }}" alt="Avatar" class="rounded-circle border border-4 border-primary"
+                            style="width: 120px; height: 120px; object-fit: cover;">
                     @else
                         <div class="user-avatar mx-auto" style="width: 120px; height: 120px; font-size: 3rem;">
                             {{ Auth::user()->initials() }}
@@ -37,31 +37,31 @@
                     @endif
                 </div>
 
-                <h4 style="color: var(--text-primary); font-weight: 600;">{{ Auth::user()->name }}</h4>
+                <h4 class="text-body fw-semibold">{{ Auth::user()->name }}</h4>
                 <p class="text-muted mb-3">{{ Auth::user()->email }}</p>
                 <x-ui.badge variant="primary" icon="fas fa-user-shield">Administrator</x-ui.badge>
 
-                <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
+                <hr class="my-4">
 
                 <div class="text-start">
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Bergabung</span>
-                        <span style="color: var(--text-primary);">{{ Auth::user()->created_at->format('d M Y') }}</span>
+                        <span class="text-body">{{ Auth::user()->created_at->format('d M Y') }}</span>
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="text-muted">Terakhir diperbarui</span>
-                        <span style="color: var(--text-primary);">{{ Auth::user()->updated_at->diffForHumans() }}</span>
+                        <span class="text-body">{{ Auth::user()->updated_at->diffForHumans() }}</span>
                     </div>
                 </div>
-            </div>
+            </x-layout.modern-card>
         </div>
 
         {{-- Edit Profile Card --}}
         <div class="col-lg-8">
             {{-- Avatar Upload --}}
-            <div class="modern-card mb-4">
+            <x-layout.modern-card class="mb-4">
                 <div class="preview-title d-flex align-items-center gap-2">
-                    <i class="fas fa-camera" style="color: var(--secondary-color);"></i>
+                    <i class="fas fa-camera text-secondary"></i>
                     Foto Profil
                 </div>
 
@@ -69,11 +69,11 @@
                     {{-- Preview --}}
                     <div class="position-relative">
                         @if($avatar)
-                            <img src="{{ $avatar->temporaryUrl() }}" alt="Preview" class="rounded-circle"
-                                style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--primary-color);">
+                            <img src="{{ $avatar->temporaryUrl() }}" alt="Preview" class="rounded-circle border border-3 border-primary"
+                                style="width: 80px; height: 80px; object-fit: cover;">
                         @elseif($currentAvatar)
-                            <img src="{{ Storage::url($currentAvatar) }}" alt="Avatar" class="rounded-circle"
-                                style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--border-color);">
+                            <img src="{{ Storage::url($currentAvatar) }}" alt="Avatar" class="rounded-circle border border-3 border-secondary"
+                                style="width: 80px; height: 80px; object-fit: cover;">
                         @else
                             <div class="user-avatar" style="width: 80px; height: 80px; font-size: 2rem;">
                                 {{ Auth::user()->initials() }}
@@ -93,64 +93,63 @@
                             </label>
 
                             @if($avatar)
-                                <button type="button" wire:click="uploadAvatar" class="btn btn-modern"
-                                    style="background: var(--success-color); color: white;">
-                                    <i class="fas fa-check me-2"></i>Simpan
-                                </button>
-                                <button type="button" wire:click="$set('avatar', null)" class="btn btn-modern"
-                                    style="background: var(--bg-tertiary); color: var(--text-primary);">
-                                    <i class="fas fa-times me-2"></i>Batal
-                                </button>
+                                <x-ui.button type="button" variant="success" wire:click="uploadAvatar" icon="fas fa-check">
+                                    Simpan
+                                </x-ui.button>
+                                <x-ui.button type="button" variant="secondary" wire:click="$set('avatar', null)" icon="fas fa-times">
+                                    Batal
+                                </x-ui.button>
                             @endif
 
                             @if($currentAvatar && !$avatar)
-                                <button type="button" wire:click="removeAvatar" class="btn btn-modern"
-                                    style="background: var(--danger-color); color: white;"
-                                    onclick="return confirm('Hapus foto profil?')">
-                                    <i class="fas fa-trash me-2"></i>Hapus
-                                </button>
+                                <x-ui.button type="button" variant="danger" wire:click="removeAvatar" icon="fas fa-trash" onclick="return confirm('Hapus foto profil?')">
+                                    Hapus
+                                </x-ui.button>
                             @endif
                         </div>
 
                         @error('avatar')
-                            <div class="text-danger mt-2" style="font-size: 0.875rem;">{{ $message }}</div>
+                            <div class="text-danger mt-2 small">{{ $message }}</div>
                         @enderror
 
-                        <p class="text-muted mb-0 mt-2" style="font-size: 0.8rem;">
+                        <p class="text-muted mb-0 mt-2 small">
                             <i class="fas fa-info-circle me-1"></i>
                             Format: JPG, PNG, GIF. Maksimal 2MB.
                         </p>
                     </div>
                 </div>
-            </div>
+            </x-layout.modern-card>
 
             {{-- Profile Information --}}
-            <div class="modern-card mb-4">
+            <x-layout.modern-card class="mb-4">
                 <div class="preview-title d-flex align-items-center gap-2">
-                    <i class="fas fa-user-edit" style="color: var(--primary-color);"></i>
+                    <i class="fas fa-user-edit text-primary"></i>
                     Informasi Profile
                 </div>
 
                 <form wire:submit="updateProfile">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="name" class="form-label">Nama Lengkap <span
-                                    style="color: var(--danger-color);">*</span></label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                                wire:model="name" placeholder="Masukkan nama lengkap">
-                            @error('name')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <x-form.input
+                                id="name"
+                                label="Nama Lengkap"
+                                wire:model="name"
+                                placeholder="Masukkan nama lengkap"
+                                required="true"
+                                error="{{ $errors->first('name') }}"
+                            />
                         </div>
 
                         <div class="col-md-6">
-                            <label for="email" class="form-label">Email <span
-                                    style="color: var(--danger-color);">*</span></label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                                wire:model="email" placeholder="Masukkan email">
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <x-form.input
+                                type="email"
+                                id="email"
+                                label="Email"
+                                wire:model="email"
+                                placeholder="Masukkan email"
+                                required="true"
+                                error="{{ $errors->first('email') }}"
+                            />
                         </div>
                     </div>
 
@@ -160,13 +159,13 @@
                         </x-ui.button>
                     </div>
                 </form>
-            </div>
+            </x-layout.modern-card>
 
             {{-- Change Password --}}
-            <div class="modern-card">
+            <x-layout.modern-card>
                 <div class="preview-title d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-lock" style="color: var(--warning-color);"></i>
+                        <i class="fas fa-lock text-warning"></i>
                         Ubah Password
                     </div>
                     <x-ui.button type="button" variant="{{ $showPasswordSection ? 'danger' : 'outline' }}" size="sm"
@@ -179,31 +178,38 @@
                     <form wire:submit="updatePassword" class="mt-3">
                         <div class="row g-3">
                             <div class="col-12">
-                                <label for="current_password" class="form-label">Password Saat Ini <span
-                                        style="color: var(--danger-color);">*</span></label>
-                                <input type="password" class="form-control @error('current_password') is-invalid @enderror"
-                                    id="current_password" wire:model="current_password"
-                                    placeholder="Masukkan password saat ini">
-                                @error('current_password')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <x-form.input
+                                    type="password"
+                                    id="current_password"
+                                    label="Password Saat Ini"
+                                    wire:model="current_password"
+                                    placeholder="Masukkan password saat ini"
+                                    required="true"
+                                    error="{{ $errors->first('current_password') }}"
+                                />
                             </div>
 
                             <div class="col-md-6">
-                                <label for="password" class="form-label">Password Baru <span
-                                        style="color: var(--danger-color);">*</span></label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                    id="password" wire:model="password" placeholder="Masukkan password baru">
-                                @error('password')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
+                                <x-form.input
+                                    type="password"
+                                    id="password"
+                                    label="Password Baru"
+                                    wire:model="password"
+                                    placeholder="Masukkan password baru"
+                                    required="true"
+                                    error="{{ $errors->first('password') }}"
+                                />
                             </div>
 
                             <div class="col-md-6">
-                                <label for="password_confirmation" class="form-label">Konfirmasi Password <span
-                                        style="color: var(--danger-color);">*</span></label>
-                                <input type="password" class="form-control" id="password_confirmation"
-                                    wire:model="password_confirmation" placeholder="Konfirmasi password baru">
+                                <x-form.input
+                                    type="password"
+                                    id="password_confirmation"
+                                    label="Konfirmasi Password"
+                                    wire:model="password_confirmation"
+                                    placeholder="Konfirmasi password baru"
+                                    required="true"
+                                />
                             </div>
                         </div>
 
@@ -224,7 +230,7 @@
                         Klik tombol "Ubah Password" untuk memperbarui password Anda.
                     </p>
                 @endif
-            </div>
+            </x-layout.modern-card>
         </div>
     </div>
 </div>
