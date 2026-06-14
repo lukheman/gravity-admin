@@ -15,60 +15,10 @@
 
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/customize-theme.css')}}">
+
     @livewireStyles
     <style>
-        :root {
-            --sidebar-width: 280px;
-            --topbar-height: 70px;
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary-color: #0ea5e9;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --danger-color: #ef4444;
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-
-            --bs-primary: #0d9488;
-            --bs-primary-rgb: 13, 148, 136;
-            --bs-secondary: #8b5cf6;
-            --bs-secondary-rgb: 139, 92, 246;
-            --bs-success: #22c55e;
-            --bs-success-rgb: 34, 197, 94;
-            --bs-warning: #eab308;
-            --bs-warning-rgb: 234, 179, 8;
-            --bs-danger: #f43f5e;
-            --bs-danger-rgb: 244, 63, 94;
-            --bs-info: #0ea5e9;
-            --bs-info-rgb: 14, 165, 233;
-
-            /* Light theme (default) */
-            --bg-primary: #f1f5f9;
-            --bg-secondary: #ffffff;
-            --bg-tertiary: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border-color: #e2e8f0;
-            --border-light: #f1f5f9;
-            --input-bg: #ffffff;
-            --hover-bg: #f8fafc;
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --border-light: #475569;
-            --input-bg: #1e293b;
-            --hover-bg: #334155;
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.4);
-        }
-
         * {
             margin: 0;
             padding: 0;
