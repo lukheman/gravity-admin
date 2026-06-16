@@ -32,7 +32,8 @@ chdir($dir);
 
 out('');
 out('+'.str_repeat('-', 63).'+', 'bold', 'green');
-out('|'.str_pad('  SIMKA - SETUP APLIKASI', 63).'|', 'bold', 'green');
+$appName = strtoupper(get_config('app_name', 'SIMKA'));
+out('|'.str_pad("  {$appName} - SETUP APLIKASI", 63).'|', 'bold', 'green');
 out('+'.str_repeat('-', 63).'+', 'bold', 'green');
 out('');
 info("Lokasi  : {$dir}");
@@ -118,11 +119,11 @@ step(4, 'Konfigurasi Database MySQL');
 info('Masukkan konfigurasi database:');
 out('');
 $db = [
-    'HOST' => input('Host MySQL', '127.0.0.1'),
-    'PORT' => input('Port MySQL', '3306'),
-    'DATABASE' => input('Nama Database', 'simka'),
-    'USERNAME' => input('Username', 'root'),
-    'PASSWORD' => input('Password', ''),
+    'HOST' => input('Host MySQL', get_config('db_host', '127.0.0.1')),
+    'PORT' => input('Port MySQL', get_config('db_port', '3306')),
+    'DATABASE' => input('Nama Database', get_config('db_name', 'edusiompu')),
+    'USERNAME' => input('Username', get_config('db_user', 'root')),
+    'PASSWORD' => input('Password', get_config('db_pass', '')),
 ];
 
 foreach ($db as $key => $val) {
@@ -181,10 +182,12 @@ foreach (['config', 'view', 'route'] as $cache) {
 
 out('');
 out('+'.str_repeat('-', 63).'+', 'bold', 'green');
-out('|'.str_pad(' SETUP APLIKASI SIMKA BERHASIL DISELESAIKAN!', 63).'|', 'bold', 'green');
+out('|'.str_pad(" SETUP APLIKASI {$appName} BERHASIL DISELESAIKAN!", 63).'|', 'bold', 'green');
 out('+'.str_repeat('-', 63).'+', 'bold', 'green');
 out('');
-info('Jalankan server dengan: php artisan serve');
+$port = get_config('serve_port', 8000);
+$host = '127.0.0.1';
+info("Jalankan server dengan: php artisan serve --host={$host} --port={$port}");
 
 showContact();
 
@@ -195,9 +198,9 @@ out(str_repeat('─', 60), 'cyan');
 $ans = strtolower(trim(fgets(STDIN)));
 if ($ans === 'y' || $ans === 'ya') {
     out('');
-    info('Server berjalan di http://localhost:8000  |  Ctrl+C untuk berhenti');
+    info("Server berjalan di http://{$host}:{$port}  |  Ctrl+C untuk berhenti");
     out('');
-    passthru('php artisan serve');
+    passthru("php artisan serve --host={$host} --port={$port}");
 } else {
-    ok("Setup selesai! Jalankan 'php artisan serve' jika sudah siap.");
+    ok("Setup selesai! Jalankan 'php artisan serve --host={$host} --port={$port}' jika sudah siap.");
 }

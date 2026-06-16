@@ -1,3 +1,3 @@
 # TODO
-
-gunakan component button di component btn-edit, btn-view, dan btn-delete
+buatkan file config.json untuk installer
+butkan compoponent toast
