@@ -10,11 +10,12 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Traits\WithNotify;
 
 #[Title('Profile - AdminPro')]
 class Profile extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, WithNotify;
 
     public string $name = '';
     public string $email = '';
@@ -94,7 +95,7 @@ class Profile extends Component
         $this->currentAvatar = $path;
         $this->avatar = null;
 
-        session()->flash('success', 'Foto profil berhasil diperbarui.');
+        $this->notifySuccess('Foto profil berhasil diperbarui.');
     }
 
     public function removeAvatar(): void
@@ -110,7 +111,7 @@ class Profile extends Component
 
         $this->currentAvatar = null;
 
-        session()->flash('success', 'Foto profil berhasil dihapus.');
+        $this->notifySuccess('Foto profil berhasil dihapus.');
     }
 
     public function updateProfile(): void
@@ -122,7 +123,7 @@ class Profile extends Component
         $user->email = $validated['email'];
         $user->save();
 
-        session()->flash('success', 'Profile berhasil diperbarui.');
+        $this->notifySuccess('Profile berhasil diperbarui.');
     }
 
     public function updatePassword(): void
@@ -141,7 +142,7 @@ class Profile extends Component
         $this->password_confirmation = '';
         $this->showPasswordSection = false;
 
-        session()->flash('success', 'Password berhasil diperbarui.');
+        $this->notifySuccess('Password berhasil diperbarui.');
     }
 
     public function render()

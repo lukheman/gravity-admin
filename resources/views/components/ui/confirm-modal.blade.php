@@ -12,9 +12,9 @@
 
 @php
     $iconColors = [
-        'danger' => 'var(--danger-color)',
-        'warning' => 'var(--warning-color)',
-        'primary' => 'var(--primary-color)',
+        'danger' => 'var(--bs-danger)',
+        'warning' => 'var(--bs-warning)',
+        'primary' => 'var(--bs-primary)',
     ];
     $iconColor = $iconColors[$variant] ?? $iconColors['danger'];
 @endphp
@@ -52,7 +52,7 @@
         <div class="d-flex justify-content-end gap-2 mt-4">
             <x-ui.button
                 type="button"
-                variant="outline"
+                variant="secondary"
                 wire:click="{{ $onCancel }}"
             >
                 {{ $cancelText }}

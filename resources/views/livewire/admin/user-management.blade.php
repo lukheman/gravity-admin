@@ -101,18 +101,10 @@
 
     {{-- Create/Edit Modal --}}
     @if ($showModal)
-        <div class="modal-backdrop-custom" wire:click.self="closeModal">
-            <div class="modal-content-custom" wire:click.stop>
-                <div class="modal-header-custom">
-                    <h5 class="modal-title-custom">
-                        {{ $editingUserId ? 'Edit User' : 'Create New User' }}
-                    </h5>
-                    <button type="button" class="modal-close-btn" wire:click="closeModal">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-
-                <form wire:submit="save">
+        <x-layout.modal-form
+            :title="$editingUserId ? 'Edit User' : 'Create New User'"
+            :submitLabel="$editingUserId ? 'Update User' : 'Create User'"
+        >
                     <x-form.input
                         id="name"
                         label="Name"
@@ -150,18 +142,7 @@
                         wire:model="password_confirmation"
                         placeholder="Confirm password"
                     />
-
-                    <div class="d-flex justify-content-end gap-2 mt-4">
-                        <x-ui.button type="button" variant="outline" wire:click="closeModal">
-                            Cancel
-                        </x-ui.button>
-                        <x-ui.button type="submit" variant="primary">
-                            {{ $editingUserId ? 'Update User' : 'Create User' }}
-                        </x-ui.button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </x-layout.modal-form>
     @endif
 
     {{-- Delete Confirmation Modal --}}

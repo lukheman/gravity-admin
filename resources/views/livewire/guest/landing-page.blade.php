@@ -316,7 +316,7 @@
                 align-items: center;
                 gap: 8px;
                 background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-                color: var(--primary-color);
+                color: var(--bs-primary);
                 padding: 0.5rem 1rem;
                 border-radius: 50px;
                 font-size: 0.9rem;
@@ -333,7 +333,7 @@
             }
 
             .gradient-text {
-                background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+                background: linear-gradient(135deg, var(--bs-primary), #8b5cf6);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -438,7 +438,7 @@
             }
 
             .sidebar-item.active {
-                background: var(--primary-color);
+                background: var(--bs-primary);
             }
 
             .preview-main {
@@ -492,7 +492,7 @@
             .section-badge {
                 display: inline-block;
                 background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-                color: var(--primary-color);
+                color: var(--bs-primary);
                 padding: 0.5rem 1.25rem;
                 border-radius: 50px;
                 font-size: 0.85rem;

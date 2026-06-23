@@ -40,11 +40,11 @@
 
     .dropdown-item:hover {
         background: var(--hover-bg);
-        color: var(--primary-color);
+        color: var(--bs-primary);
     }
 
     .dropdown-item:active {
-        background: var(--primary-color);
+        background: var(--bs-primary);
         color: white;
     }
 

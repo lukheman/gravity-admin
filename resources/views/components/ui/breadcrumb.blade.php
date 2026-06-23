@@ -45,7 +45,7 @@
     }
 
     .custom-breadcrumb .breadcrumb-item a:hover {
-        color: var(--primary-color);
+        color: var(--bs-primary);
     }
 
     .custom-breadcrumb .breadcrumb-item.active {

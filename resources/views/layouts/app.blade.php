@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/customize-theme.css')}}">
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     @livewireStyles
     <style>
@@ -49,7 +51,7 @@
             padding: 1.5rem 1.5rem;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
@@ -87,11 +89,11 @@
 
         .sidebar-menu a:hover {
             background: var(--hover-bg);
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .sidebar-menu a.active {
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
         }
 
@@ -202,7 +204,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -238,13 +240,13 @@
         }
 
         .btn-primary-modern {
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
             border: none;
         }
 
         .btn-primary-modern:hover {
-            background: var(--primary-dark);
+            background: var(--bs-primary);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
         }
@@ -370,7 +372,7 @@
 
         .theme-toggle:hover {
             background: var(--hover-bg);
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .theme-toggle i {
@@ -437,7 +439,7 @@
         }
 
         .modal-close-btn:hover {
-            color: var(--danger-color);
+            color: var(--bs-danger);
         }
 
         .form-label {
@@ -456,7 +458,7 @@
 
         .form-control:focus {
             background: var(--input-bg);
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
             color: var(--text-primary);
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
@@ -480,12 +482,12 @@
 
         .input-group .form-control:focus {
             background: var(--input-bg);
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
             color: var(--text-primary);
         }
 
         .invalid-feedback {
-            color: var(--danger-color);
+            color: var(--bs-danger);
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
@@ -505,15 +507,15 @@
         }
 
         .action-btn-edit {
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .action-btn-delete {
-            color: var(--danger-color);
+            color: var(--bs-danger);
         }
 
         .action-btn-view {
-            color: var(--secondary-color);
+            color: var(--bs-secondary);
         }
 
         /* Pagination */
@@ -522,10 +524,10 @@
             --bs-pagination-color: var(--text-primary);
             --bs-pagination-border-color: var(--border-color);
             --bs-pagination-hover-bg: var(--hover-bg);
-            --bs-pagination-hover-color: var(--primary-color);
+            --bs-pagination-hover-color: var(--bs-primary);
             --bs-pagination-focus-bg: var(--hover-bg);
-            --bs-pagination-active-bg: var(--primary-color);
-            --bs-pagination-active-border-color: var(--primary-color);
+            --bs-pagination-active-bg: var(--bs-primary);
+            --bs-pagination-active-border-color: var(--bs-primary);
             --bs-pagination-disabled-bg: var(--bg-tertiary);
             --bs-pagination-disabled-color: var(--text-muted);
         }
@@ -605,6 +607,82 @@
             document.getElementById('sidebar').classList.toggle('show');
         }
     </script>
+
+    <!-- Toastify & SweetAlert2 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener('livewire:initialized', () => {
+            Livewire.on('toast', ({ message, variant, reload }) => {
+                if (reload) {
+                    sessionStorage.setItem('reload', 'true');
+                    sessionStorage.setItem('variant', variant);
+                    sessionStorage.setItem('message', message);
+                }
+
+                const borderColors = {
+                    success: "var(--bs-success)",
+                    warning: "var(--bs-warning)",
+                    error: "var(--bs-danger)",
+                    info: "var(--bs-info)"
+                };
+
+                Toastify({
+                    text: message,
+                    duration: 4000,
+                    close: false,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: "var(--bg-secondary)",
+                        border: `2px solid ${borderColors[variant] || "var(--bs-secondary)"}`,
+                        color: "var(--text-primary)",
+                        borderRadius: "12px",
+                        boxShadow: "var(--card-shadow)"
+                    },
+                }).showToast();
+            });
+        });
+
+        // Setelah halaman dimuat ulang, periksa apakah ada notifikasi yang harus ditampilkan
+        window.addEventListener('load', function() {
+            if (sessionStorage.getItem('reload') === 'true') {
+                const message = sessionStorage.getItem('message');
+                const variant = sessionStorage.getItem('variant');
+
+                const borderColors = {
+                    success: "var(--bs-success)",
+                    warning: "var(--bs-warning)",
+                    error: "var(--bs-danger)",
+                    info: "var(--bs-info)"
+                };
+
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    close: false,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: "var(--bg-secondary)",
+                        border: `2px solid ${borderColors[variant] || "var(--bs-secondary)"}`,
+                        color: "var(--text-primary)",
+                        borderRadius: "12px",
+                        boxShadow: "var(--card-shadow)"
+                    },
+                }).showToast();
+
+                // Hapus item setelah toast ditampilkan
+                sessionStorage.removeItem('reload');
+                sessionStorage.removeItem('message');
+                sessionStorage.removeItem('variant');
+            }
+        });
+    </script>
+
     @livewireScripts
 </body>
 </html>

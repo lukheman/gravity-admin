@@ -62,7 +62,7 @@
     @else
         <div 
             class="avatar-placeholder d-flex align-items-center justify-content-center"
-            style="width: {{ $sizeConfig['size'] }}; height: {{ $sizeConfig['size'] }}; border-radius: {{ $borderRadius }}; font-size: {{ $sizeConfig['font'] }}; background: var(--primary-color); color: white; font-weight: 600;"
+            style="width: {{ $sizeConfig['size'] }}; height: {{ $sizeConfig['size'] }}; border-radius: {{ $borderRadius }}; font-size: {{ $sizeConfig['font'] }}; background: var(--bs-primary); color: white; font-weight: 600;"
         >
             {{ $initials ?: $slot }}
         </div>

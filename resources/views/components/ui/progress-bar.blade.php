@@ -7,11 +7,11 @@
 
 @php
     $colors = [
-        'primary' => 'var(--primary-color)',
-        'secondary' => 'var(--secondary-color)',
-        'success' => 'var(--success-color)',
-        'warning' => 'var(--warning-color)',
-        'danger' => 'var(--danger-color)',
+        'primary' => 'var(--bs-primary)',
+        'secondary' => 'var(--bs-secondary)',
+        'success' => 'var(--bs-success)',
+        'warning' => 'var(--bs-warning)',
+        'danger' => 'var(--bs-danger)',
     ];
     $color = $colors[$variant] ?? $colors['primary'];
     $percentage = min(100, max(0, $value));

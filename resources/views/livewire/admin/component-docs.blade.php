@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
             <div>
                 <h1 class="docs-title">
-                    <i class="fas fa-cubes me-2" style="color: var(--primary-color);"></i>
+                    <i class="fas fa-cubes me-2" style="color: var(--bs-primary);"></i>
                     Component Library
                 </h1>
                 <p class="docs-subtitle mb-0">Comprehensive UI component documentation with live examples</p>
@@ -441,7 +441,7 @@
         navigator.clipboard.writeText(text).then(() => {
             const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            button.style.background = 'var(--success-color)';
+            button.style.background = 'var(--bs-success)';
             button.style.color = 'white';
 
             setTimeout(() => {

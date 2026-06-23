@@ -22,13 +22,13 @@
 
     <style>
         :root {
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
+            --bs-primary: #6366f1;
+            --bs-primary: #4f46e5;
             --primary-light: #818cf8;
-            --secondary-color: #0ea5e9;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --danger-color: #ef4444;
+            --bs-secondary: #0ea5e9;
+            --bs-success: #10b981;
+            --bs-warning: #f59e0b;
+            --bs-danger: #ef4444;
             --text-primary: #1e293b;
             --text-secondary: #64748b;
             --text-muted: #94a3b8;
@@ -38,8 +38,8 @@
         }
 
         [data-theme="dark"] {
-            --primary-color: #818cf8;
-            --primary-dark: #6366f1;
+            --bs-primary: #818cf8;
+            --bs-primary: #6366f1;
             --primary-light: #a5b4fc;
             --text-primary: #f1f5f9;
             --text-secondary: #cbd5e1;
@@ -98,7 +98,7 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             font-size: 1.5rem;
             font-weight: 700;
         }
@@ -125,7 +125,7 @@
         }
 
         .site-nav-link:hover {
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .site-navbar-actions {
@@ -155,12 +155,12 @@
         }
 
         .btn-nav-outline:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            border-color: var(--bs-primary);
+            color: var(--bs-primary);
         }
 
         .btn-nav-primary {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
             color: white;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
@@ -187,7 +187,7 @@
 
         .theme-toggle:hover {
             background: var(--border-color);
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .theme-toggle i {
@@ -250,12 +250,12 @@
         }
 
         .btn-outline:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            border-color: var(--bs-primary);
+            color: var(--bs-primary);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
             color: white;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
@@ -320,7 +320,7 @@
         }
 
         .footer-column a:hover {
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .footer-bottom {
@@ -358,7 +358,7 @@
         }
 
         .footer-social a:hover {
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
         }
 
@@ -481,7 +481,7 @@
         .brand-logo .icon-wrapper {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
             border-radius: 20px;
             display: inline-flex;
             align-items: center;
@@ -532,7 +532,7 @@
         }
 
         .form-floating .form-control:focus {
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
             box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
             background: white;
         }
@@ -554,7 +554,7 @@
         }
 
         .form-floating:focus-within .input-icon {
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .password-toggle {
@@ -572,17 +572,17 @@
         }
 
         .password-toggle:hover {
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
         .form-check-input:checked {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
         }
 
         .form-check-input:focus {
             box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
         }
 
         .form-check-label {
@@ -591,21 +591,21 @@
         }
 
         .forgot-password {
-            color: var(--primary-color);
+            color: var(--bs-primary);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .forgot-password:hover {
-            color: var(--primary-dark);
+            color: var(--bs-primary);
             text-decoration: underline;
         }
 
         .btn-login {
             width: 100%;
             height: 56px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
             border: none;
             border-radius: 12px;
             color: white;
@@ -697,7 +697,7 @@
         }
 
         .btn-social:hover {
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
             background: #f8fafc;
             transform: translateY(-2px);
         }
@@ -721,14 +721,14 @@
         }
 
         .signup-link a {
-            color: var(--primary-color);
+            color: var(--bs-primary);
             font-weight: 600;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .signup-link a:hover {
-            color: var(--primary-dark);
+            color: var(--bs-primary);
             text-decoration: underline;
         }
 

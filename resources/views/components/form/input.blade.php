@@ -22,7 +22,7 @@
         <label for="{{ $inputId }}" class="form-label" style="color: #1e293b; font-weight: 500;">
             {{ $label }}
             @if($required)
-                <span style="color: var(--danger-color);">*</span>
+                <span style="color: var(--bs-danger);">*</span>
             @endif
         </label>
     @endif

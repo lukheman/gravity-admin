@@ -51,12 +51,12 @@
     }
 
     .custom-checkbox .form-check-input:checked {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
     }
 
     .custom-checkbox .form-check-input:focus {
-        border-color: var(--primary-color);
+        border-color: var(--bs-primary);
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
 

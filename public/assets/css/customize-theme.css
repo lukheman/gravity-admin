@@ -2,15 +2,6 @@
     --sidebar-width: 280px;
     --topbar-height: 70px;
 
-    /* Warna utama — hijau hutan & tanah */
-    --primary-color: #4a6741;
-    --primary-dark: #3d5a3e;
-    --primary-light: #7a9e6a;
-    --secondary-color: #8a6e3a;
-    --success-color: #5a8a3a;
-    --warning-color: #c8a050;
-    --danger-color: #c05a3a;
-
     /* Bootstrap overrides — palet alam */
     --bs-primary: #4a6741;
     --bs-primary-rgb: 74, 103, 65;

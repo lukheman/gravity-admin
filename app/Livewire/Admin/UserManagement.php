@@ -10,11 +10,12 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Traits\WithNotify;
 
 #[Title('User Management')]
 class UserManagement extends Component
 {
-    use WithPagination;
+    use WithPagination, WithNotify;
 
     // Search
     #[Url(as: 'q')]
@@ -89,14 +90,14 @@ class UserManagement extends Component
             }
 
             $user->save();
-            session()->flash('success', 'User updated successfully.');
+            $this->notifySuccess('User updated successfully.');
         } else {
             User::create([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'password' => Hash::make($validated['password']),
             ]);
-            session()->flash('success', 'User created successfully.');
+            $this->notifySuccess('User created successfully.');
         }
 
         $this->closeModal();
@@ -119,7 +120,7 @@ class UserManagement extends Component
     {
         if ($this->deletingUserId) {
             User::destroy($this->deletingUserId);
-            session()->flash('success', 'User deleted successfully.');
+            $this->notifySuccess('User deleted successfully.');
         }
 
         $this->showDeleteModal = false;

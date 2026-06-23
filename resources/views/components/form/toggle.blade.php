@@ -85,7 +85,7 @@
     }
 
     .toggle-switch input:checked + .toggle-slider {
-        background-color: var(--primary-color);
+        background-color: var(--bs-primary);
     }
 
     .toggle-switch input:checked + .toggle-slider::before {

@@ -59,9 +59,9 @@
         >
 
         <div class="file-upload-content">
-            <i class="fas fa-cloud-upload-alt mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+            <i class="fas fa-cloud-upload-alt mb-3" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
             <p class="mb-1" style="color: var(--text-primary); font-weight: 500;">
-                Drag & drop file di sini atau <span style="color: var(--primary-color);">browse</span>
+                Drag & drop file di sini atau <span style="color: var(--bs-primary);">browse</span>
             </p>
             <small style="color: var(--text-muted);">
                 {{ $accept }} • Maksimal {{ $maxSize }}
@@ -87,7 +87,7 @@
                             <img :src="file.preview" class="rounded" style="width: 48px; height: 48px; object-fit: cover;">
                         </template>
                         <template x-if="!file.file.type.startsWith('image/')">
-                            <div class="d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: var(--primary-color); border-radius: 8px; color: white;">
+                            <div class="d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: var(--bs-primary); border-radius: 8px; color: white;">
                                 <i class="fas fa-file"></i>
                             </div>
                         </template>
@@ -95,7 +95,7 @@
                             <div style="color: var(--text-primary); font-weight: 500;" x-text="file.name"></div>
                             <small style="color: var(--text-muted);" x-text="file.size"></small>
                         </div>
-                        <button type="button" class="btn btn-link" style="color: var(--danger-color);" @click="removeFile(index)">
+                        <button type="button" class="btn btn-link" style="color: var(--bs-danger);" @click="removeFile(index)">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -118,12 +118,12 @@
 
     .file-upload-zone:hover,
     .file-upload-zone.dragging {
-        border-color: var(--primary-color);
+        border-color: var(--bs-primary);
         background: var(--hover-bg);
     }
 
     .file-upload-zone.is-invalid {
-        border-color: var(--danger-color);
+        border-color: var(--bs-danger);
     }
 
     .file-upload-content i {

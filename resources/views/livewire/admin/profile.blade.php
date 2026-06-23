@@ -168,7 +168,7 @@
                         <i class="fas fa-lock text-warning"></i>
                         Ubah Password
                     </div>
-                    <x-ui.button type="button" variant="{{ $showPasswordSection ? 'danger' : 'outline' }}" size="sm"
+                    <x-ui.button type="button" variant="{{ $showPasswordSection ? 'danger' : 'secondary' }}" size="sm"
                         wire:click="togglePasswordSection">
                         {{ $showPasswordSection ? 'Batal' : 'Ubah Password' }}
                     </x-ui.button>

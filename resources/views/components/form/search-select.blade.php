@@ -44,7 +44,7 @@
         <label for="{{ $inputId }}" class="form-label">
             {{ $label }}
             @if($required)
-                <span style="color: var(--danger-color);">*</span>
+                <span style="color: var(--bs-danger);">*</span>
             @endif
         </label>
     @endif
@@ -124,11 +124,11 @@
 
     .search-select-trigger:hover,
     .search-select-trigger.active {
-        border-color: var(--primary-color);
+        border-color: var(--bs-primary);
     }
 
     .search-select-trigger.is-invalid {
-        border-color: var(--danger-color);
+        border-color: var(--bs-danger);
     }
 
     .search-select-dropdown {
@@ -171,7 +171,7 @@
     }
 
     .search-select-option.selected {
-        background: var(--primary-color);
+        background: var(--bs-primary);
         color: white;
     }
 

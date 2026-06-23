@@ -20,7 +20,7 @@
         <label for="{{ $inputId }}" class="form-label">
             {{ $label }}
             @if($required)
-                <span style="color: var(--danger-color);">*</span>
+                <span style="color: var(--bs-danger);">*</span>
             @endif
         </label>
     @endif
@@ -69,7 +69,7 @@
 
     .form-select:focus {
         background-color: var(--input-bg);
-        border-color: var(--primary-color);
+        border-color: var(--bs-primary);
         color: var(--text-primary);
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
